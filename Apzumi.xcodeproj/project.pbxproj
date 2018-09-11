@@ -23,6 +23,7 @@
 		6BFCC40A2147D45900B11FD0 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC4092147D45900B11FD0 /* Repository.swift */; };
 		6BFCC40C2147D4E400B11FD0 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC40B2147D4E400B11FD0 /* Enums.swift */; };
 		6BFCC40E2147D60100B11FD0 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC40D2147D60100B11FD0 /* DataService.swift */; };
+		6BFCC4102147E52200B11FD0 /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BFCC40F2147E52200B11FD0 /* Colours.xcassets */; };
 		E3873467E918E4F4B6D53C80 /* Pods_Apzumi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F88852B840FCE38532FC5D /* Pods_Apzumi.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		6BFCC4092147D45900B11FD0 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		6BFCC40B2147D4E400B11FD0 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		6BFCC40D2147D60100B11FD0 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		6BFCC40F2147E52200B11FD0 /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
 		D58CB075B0DC419A4A2E47B9 /* Pods-Apzumi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apzumi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Apzumi/Pods-Apzumi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 				6B5C7F6B21477BFB00386D2C /* Main.storyboard */,
 				6BFCC3EF2147A43400B11FD0 /* Other */,
 				6B5C7F6E21477BFC00386D2C /* Assets.xcassets */,
+				6BFCC40F2147E52200B11FD0 /* Colours.xcassets */,
 				6B5C7F7021477BFC00386D2C /* LaunchScreen.storyboard */,
 				6B5C7F7321477BFC00386D2C /* Info.plist */,
 			);
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B5C7F7221477BFC00386D2C /* LaunchScreen.storyboard in Resources */,
+				6BFCC4102147E52200B11FD0 /* Colours.xcassets in Resources */,
 				6B5C7F6F21477BFC00386D2C /* Assets.xcassets in Resources */,
 				6B5C7F6D21477BFB00386D2C /* Main.storyboard in Resources */,
 				6BFCC4022147BD1F00B11FD0 /* RepoTableViewCell.xib in Resources */,

@@ -69,11 +69,12 @@ class RepoViewModel {
     
 
     
-    func getCellData(withIndex index: Int) -> (repoName: String, ownerName: String, avatarUrl: String) {
+    func getCellData(withIndex index: Int) -> (repoName: String, ownerName: String, avatarUrl: String, source: RepoSource) {
         let repoName  = repositories[index].repoName
         let ownerName = repositories[index].ownerName
         let avatarUrl = repositories[index].ownerAvatarUrl
-        return (repoName, ownerName, avatarUrl)
+        let source    = repositories[index].repoSource
+        return (repoName, ownerName, avatarUrl, source)
     }
     
     

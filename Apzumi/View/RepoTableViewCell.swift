@@ -14,6 +14,7 @@ class RepoTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView:   UIImageView!
     @IBOutlet weak var repoNameLabel:     UILabel!
     @IBOutlet weak var ownerNameLabel:    UILabel!
+    @IBOutlet weak var dataSourceLabel:   UILabel!
     
     
     override func awakeFromNib() {
@@ -29,13 +30,23 @@ class RepoTableViewCell: UITableViewCell {
     private func resetCell() {
         activityIndicator.startAnimating()
         avatarImageView.image = nil
-        repoNameLabel.text = ""
-        ownerNameLabel.text = ""
+        repoNameLabel.text    = ""
+        ownerNameLabel.text   = ""
+        dataSourceLabel.text  = ""
     }
     
-    func update(repoName: String, ownerName: String, avatarUrl: String) {
+    func update(repoName: String, ownerName: String, avatarUrl: String, source: RepoSource) {
         ///avatarImageView.image =
+        
         repoNameLabel.text = repoName
         ownerNameLabel.text = ownerName
+        
+        if source == .bitbucket {
+            dataSourceLabel.text = "Bitbucket"
+            dataSourceLabel.textColor = UIColor(named: "Bitbucket")
+        } else {
+            dataSourceLabel.text = "GitHub"
+            dataSourceLabel.textColor = UIColor(named: "GitHub")
+        }
     }
 }

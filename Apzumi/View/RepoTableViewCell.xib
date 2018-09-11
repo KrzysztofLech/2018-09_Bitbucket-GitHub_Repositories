@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +23,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7d-8s-aYR" userLabel="Container">
                         <rect key="frame" x="10" y="0.0" width="300" height="59.5"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzR-zA-Wm6" userLabel="Horizontal Line">
+                                <rect key="frame" x="70" y="33.5" width="220" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Lvx-6a-Phf"/>
+                                </constraints>
+                            </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="edQ-gy-SfJ">
                                 <rect key="frame" x="20" y="19" width="20" height="20"/>
                             </activityIndicatorView>
@@ -31,31 +39,42 @@
                                     <constraint firstAttribute="width" constant="60" id="f4C-10-fAe"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repository Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmo-Tf-yaH">
-                                <rect key="frame" x="70" y="15" width="220" height="20"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1al-JT-cqu">
-                                <rect key="frame" x="70" y="35" width="63.5" height="12"/>
+                                <rect key="frame" x="70" y="36.5" width="63.5" height="12"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSX-Sl-RbB">
+                                <rect key="frame" x="253" y="36.5" width="37" height="12"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <color key="textColor" name="Bitbucket"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repository Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmo-Tf-yaH">
+                                <rect key="frame" x="70" y="12" width="220" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1al-JT-cqu" firstAttribute="top" secondItem="qmo-Tf-yaH" secondAttribute="bottom" id="B9e-YJ-rHu"/>
-                            <constraint firstItem="qmo-Tf-yaH" firstAttribute="leading" secondItem="8yv-kD-raF" secondAttribute="trailing" constant="10" id="BJf-8v-hDo"/>
+                            <constraint firstItem="pSX-Sl-RbB" firstAttribute="trailing" secondItem="nzR-zA-Wm6" secondAttribute="trailing" id="7cK-at-a38"/>
+                            <constraint firstItem="qmo-Tf-yaH" firstAttribute="trailing" secondItem="nzR-zA-Wm6" secondAttribute="trailing" id="KVW-gd-2HN"/>
                             <constraint firstAttribute="bottom" secondItem="8yv-kD-raF" secondAttribute="bottom" id="Llq-Gv-Yem"/>
                             <constraint firstItem="8yv-kD-raF" firstAttribute="leading" secondItem="F7d-8s-aYR" secondAttribute="leading" id="Y1e-NG-JQD"/>
                             <constraint firstItem="edQ-gy-SfJ" firstAttribute="centerX" secondItem="8yv-kD-raF" secondAttribute="centerX" id="Z0v-M2-taO"/>
-                            <constraint firstAttribute="trailing" secondItem="qmo-Tf-yaH" secondAttribute="trailing" constant="10" id="e14-9H-GI4"/>
+                            <constraint firstItem="qmo-Tf-yaH" firstAttribute="leading" secondItem="nzR-zA-Wm6" secondAttribute="leading" id="dLD-ds-6V4"/>
+                            <constraint firstItem="nzR-zA-Wm6" firstAttribute="leading" secondItem="8yv-kD-raF" secondAttribute="trailing" constant="10" id="dlW-Rs-r4Z"/>
+                            <constraint firstItem="1al-JT-cqu" firstAttribute="leading" secondItem="nzR-zA-Wm6" secondAttribute="leading" id="gsB-zD-muT"/>
                             <constraint firstItem="8yv-kD-raF" firstAttribute="top" secondItem="F7d-8s-aYR" secondAttribute="top" id="hdG-Kv-L8h"/>
-                            <constraint firstItem="1al-JT-cqu" firstAttribute="leading" secondItem="qmo-Tf-yaH" secondAttribute="leading" id="mNx-Ig-DdQ"/>
-                            <constraint firstItem="qmo-Tf-yaH" firstAttribute="centerY" secondItem="8yv-kD-raF" secondAttribute="centerY" constant="-5" id="mW8-3j-geD"/>
+                            <constraint firstItem="nzR-zA-Wm6" firstAttribute="top" secondItem="qmo-Tf-yaH" secondAttribute="bottom" constant="2" id="pJx-WN-F0D"/>
+                            <constraint firstAttribute="trailing" secondItem="nzR-zA-Wm6" secondAttribute="trailing" constant="10" id="rZ7-jx-pgz"/>
+                            <constraint firstItem="1al-JT-cqu" firstAttribute="top" secondItem="nzR-zA-Wm6" secondAttribute="bottom" constant="2" id="rgZ-BN-wFR"/>
+                            <constraint firstItem="nzR-zA-Wm6" firstAttribute="centerY" secondItem="F7d-8s-aYR" secondAttribute="centerY" constant="4" id="wF0-nP-oXl"/>
                             <constraint firstItem="edQ-gy-SfJ" firstAttribute="centerY" secondItem="8yv-kD-raF" secondAttribute="centerY" id="wXB-CJ-l9w"/>
+                            <constraint firstItem="pSX-Sl-RbB" firstAttribute="centerY" secondItem="1al-JT-cqu" secondAttribute="centerY" id="yb6-cs-aGm"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -71,9 +90,15 @@
             <connections>
                 <outlet property="activityIndicator" destination="edQ-gy-SfJ" id="Dvt-Gk-rJc"/>
                 <outlet property="avatarImageView" destination="8yv-kD-raF" id="e01-Y8-KnY"/>
+                <outlet property="dataSourceLabel" destination="pSX-Sl-RbB" id="fL2-UT-yMa"/>
                 <outlet property="ownerNameLabel" destination="1al-JT-cqu" id="GWV-Pd-1aY"/>
                 <outlet property="repoNameLabel" destination="qmo-Tf-yaH" id="MC8-lv-Nub"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="Bitbucket">
+            <color red="0.29019607843137257" green="0.6588235294117647" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

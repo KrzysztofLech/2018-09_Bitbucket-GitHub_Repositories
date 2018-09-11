@@ -43,7 +43,7 @@ extension ListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.toString(), for: indexPath) as? RepoTableViewCell else { return UITableViewCell() }
         
         let cellData = repoViewModel.getCellData(withIndex: indexPath.row)
-        cell.update(repoName: cellData.repoName, ownerName: cellData.ownerName, avatarUrl: cellData.avatarUrl)
+        cell.update(repoName: cellData.repoName, ownerName: cellData.ownerName, avatarUrl: cellData.avatarUrl, source: cellData.source)
         return cell
     }
 }
