@@ -12,38 +12,69 @@ typealias Completion = (()->())
 
 class RepoViewModel {
     
-    var githubElementsNumber: Int = 0
-    
+    var repositoriesCount: Int {
+        return repositories.count
+    }
     
     // MARK: - Private properties
     
-    private let apiService: APIService
+    private let dataService: DataService
     
-    private var githubRepositories: [GithubRepository] = []
+    var repositories: [Repository] = {
+        
+        let bitbucketElements = 10
+        let githubElements = 100
+        
+        var array: [Repository] = []
+        array.reserveCapacity(bitbucketElements + githubElements)
+        
+        return array
+    }()
+
     
     // MARK: - Init
     
-    init(apiService: APIService = APIService()) {
-        self.apiService = apiService
+    init(dataService: DataService = DataService()) {
+        self.dataService = dataService
     }
     
-    // MARK: - Networking
     
-    func getGitHubData(completion: @escaping Completion) {
-        apiService.getGitHubData { [unowned self] (dataArray) in
-            self.githubRepositories = dataArray
-            self.githubElementsNumber = dataArray.count
+    // MARK: Public methods
+    
+    func getData(completion: @escaping Completion) {
+        repositories.removeAll(keepingCapacity: true)
+        
+        // GitHub data fetching
+        dataService.fetchGitHubData { [unowned self] (dataArray) in
+            self.repositories.append(contentsOf: dataArray)
+            
+            print("Dodano \(dataArray.count) elementów z GitHub")
+            
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
+        
+        // Bitbucket data fetching
+        dataService.fetchBitbucketData { [unowned self] (dataArray) in
+            self.repositories.append(contentsOf: dataArray)
+            
+            print("Dodano \(dataArray.count) elementów z Bitbucket")
+            
             DispatchQueue.main.async {
                 completion()
             }
         }
     }
     
-    func getGithubCellData(withIndex index: Int) -> (repoName: String, ownerName: String, avatarUrl: String) {
-        let repoName  = githubRepositories[index].repoName
-        let ownerName = githubRepositories[index].owner.name
-        let avatarUrl = githubRepositories[index].owner.avatar
+
+    
+    func getCellData(withIndex index: Int) -> (repoName: String, ownerName: String, avatarUrl: String) {
+        let repoName  = repositories[index].repoName
+        let ownerName = repositories[index].ownerName
+        let avatarUrl = repositories[index].ownerAvatarUrl
         return (repoName, ownerName, avatarUrl)
     }
+    
     
 }

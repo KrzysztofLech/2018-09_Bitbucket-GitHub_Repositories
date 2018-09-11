@@ -24,7 +24,7 @@ class ListViewController: UIViewController {
     }
     
     private func getData() {
-        repoViewModel.getGitHubData { [unowned self] in
+        repoViewModel.getData { [unowned self] in
             self.tableView.reloadData()
         }
     }
@@ -36,13 +36,13 @@ class ListViewController: UIViewController {
 extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repoViewModel.githubElementsNumber
+        return repoViewModel.repositoriesCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.toString(), for: indexPath) as? RepoTableViewCell else { return UITableViewCell() }
         
-        let cellData = repoViewModel.getGithubCellData(withIndex: indexPath.row)
+        let cellData = repoViewModel.getCellData(withIndex: indexPath.row)
         cell.update(repoName: cellData.repoName, ownerName: cellData.ownerName, avatarUrl: cellData.avatarUrl)
         return cell
     }
