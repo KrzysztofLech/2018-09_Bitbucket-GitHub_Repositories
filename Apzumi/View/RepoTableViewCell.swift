@@ -15,6 +15,7 @@ class RepoTableViewCell: UITableViewCell {
     @IBOutlet weak var repoNameLabel:     UILabel!
     @IBOutlet weak var ownerNameLabel:    UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         resetCell()
@@ -30,5 +31,11 @@ class RepoTableViewCell: UITableViewCell {
         avatarImageView.image = nil
         repoNameLabel.text = ""
         ownerNameLabel.text = ""
+    }
+    
+    func update(repoName: String, ownerName: String, avatarUrl: String) {
+        ///avatarImageView.image =
+        repoNameLabel.text = repoName
+        ownerNameLabel.text = ownerName
     }
 }

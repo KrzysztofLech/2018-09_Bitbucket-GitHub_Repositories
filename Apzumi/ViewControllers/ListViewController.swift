@@ -12,10 +12,21 @@ class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    lazy var repoViewModel: RepoViewModel = {
+        return RepoViewModel()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: RepoTableViewCell.toString(), bundle: nil), forCellReuseIdentifier: RepoTableViewCell.toString())
+        getData()
+    }
+    
+    private func getData() {
+        repoViewModel.getGitHubData { [unowned self] in
+            self.tableView.reloadData()
+        }
     }
     
     
@@ -25,12 +36,14 @@ class ListViewController: UIViewController {
 extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return repoViewModel.githubElementsNumber
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.toString(), for: indexPath) as? RepoTableViewCell else { return UITableViewCell() }
         
+        let cellData = repoViewModel.getGithubCellData(withIndex: indexPath.row)
+        cell.update(repoName: cellData.repoName, ownerName: cellData.ownerName, avatarUrl: cellData.avatarUrl)
         return cell
     }
 }
