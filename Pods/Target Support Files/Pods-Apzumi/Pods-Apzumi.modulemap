@@ -1,0 +1,6 @@
+framework module Pods_Apzumi {
+  umbrella header "Pods-Apzumi-umbrella.h"
+
+  export *
+  module * { export * }
+}
