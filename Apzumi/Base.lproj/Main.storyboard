@@ -81,7 +81,7 @@
         <!--Details View Controller-->
         <scene sceneID="82C-8X-Xqv">
             <objects>
-                <viewController id="ybi-ue-gE6" customClass="DetailsViewController" customModule="Apzumi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="ybi-ue-gE6" customClass="DetailsViewController" customModule="Apzumi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OHL-r2-plF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
