@@ -14,6 +14,9 @@
 		6BFCC3F42147A8DB00B11FD0 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC3F32147A8DB00B11FD0 /* InitialViewController.swift */; };
 		6BFCC3F62147A8FD00B11FD0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC3F52147A8FD00B11FD0 /* ListViewController.swift */; };
 		6BFCC3F82147A98400B11FD0 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC3F72147A98400B11FD0 /* DetailsViewController.swift */; };
+		6BFCC3FA2147AC9A00B11FD0 /* GithubRepoOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC3F92147AC9A00B11FD0 /* GithubRepoOwner.swift */; };
+		6BFCC3FC2147AE2500B11FD0 /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC3FB2147AE2500B11FD0 /* GithubRepository.swift */; };
+		6BFCC3FE2147AFC500B11FD0 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC3FD2147AFC500B11FD0 /* APIService.swift */; };
 		E3873467E918E4F4B6D53C80 /* Pods_Apzumi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F88852B840FCE38532FC5D /* Pods_Apzumi.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		6BFCC3F32147A8DB00B11FD0 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		6BFCC3F52147A8FD00B11FD0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		6BFCC3F72147A98400B11FD0 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		6BFCC3F92147AC9A00B11FD0 /* GithubRepoOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoOwner.swift; sourceTree = "<group>"; };
+		6BFCC3FB2147AE2500B11FD0 /* GithubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
+		6BFCC3FD2147AFC500B11FD0 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		D58CB075B0DC419A4A2E47B9 /* Pods-Apzumi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apzumi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Apzumi/Pods-Apzumi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +88,8 @@
 		6BFCC3EB2147A3C100B11FD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6BFCC3F92147AC9A00B11FD0 /* GithubRepoOwner.swift */,
+				6BFCC3FB2147AE2500B11FD0 /* GithubRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 		6BFCC3F22147A4CB00B11FD0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6BFCC3FD2147AFC500B11FD0 /* APIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -273,9 +282,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B5C7F6821477BFB00386D2C /* AppDelegate.swift in Sources */,
+				6BFCC3FE2147AFC500B11FD0 /* APIService.swift in Sources */,
+				6BFCC3FA2147AC9A00B11FD0 /* GithubRepoOwner.swift in Sources */,
 				6BFCC3F42147A8DB00B11FD0 /* InitialViewController.swift in Sources */,
 				6BFCC3F62147A8FD00B11FD0 /* ListViewController.swift in Sources */,
 				6BFCC3F82147A98400B11FD0 /* DetailsViewController.swift in Sources */,
+				6BFCC3FC2147AE2500B11FD0 /* GithubRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
