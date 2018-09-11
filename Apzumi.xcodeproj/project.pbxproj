@@ -107,9 +107,9 @@
 		6BFCC3EB2147A3C100B11FD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6BFCC4092147D45900B11FD0 /* Repository.swift */,
 				6BFCC3F92147AC9A00B11FD0 /* GithubRepoOwner.swift */,
 				6BFCC3FB2147AE2500B11FD0 /* GithubRepository.swift */,
-				6BFCC4092147D45900B11FD0 /* Repository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

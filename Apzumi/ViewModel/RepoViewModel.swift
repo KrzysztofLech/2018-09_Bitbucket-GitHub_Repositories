@@ -58,9 +58,9 @@ class RepoViewModel {
         // Bitbucket data fetching
         dataService.fetchBitbucketData { [unowned self] (dataArray) in
             self.repositories.append(contentsOf: dataArray)
-            
+
             print("Dodano \(dataArray.count) elementów z Bitbucket")
-            
+
             DispatchQueue.main.async {
                 completion()
             }
