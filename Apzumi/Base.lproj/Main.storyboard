@@ -41,11 +41,40 @@
                     </view>
                     <navigationItem key="navigationItem" id="fFB-1y-E90"/>
                     <connections>
+                        <outlet property="noDataView" destination="6YS-0U-yRd" id="mEh-HA-HtC"/>
                         <outlet property="tableView" destination="7Kc-9C-YLK" id="zIn-Uo-EV7"/>
                         <segue destination="ybi-ue-gE6" kind="show" identifier="DetailsVC" id="47o-aa-KYQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Jr-lX-E8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="6YS-0U-yRd" userLabel="NoData View">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mY2-Cp-kdi">
+                            <rect key="frame" x="0.0" y="28.666666666666671" width="240" height="71"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="JMZ-Rg-1TL">
+                                    <rect key="frame" x="101.66666666666667" y="0.0" width="37.000000000000014" height="37"/>
+                                </activityIndicatorView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQr-H8-xoa">
+                                    <rect key="frame" x="87" y="47" width="66.333333333333314" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="mY2-Cp-kdi" firstAttribute="centerY" secondItem="6YS-0U-yRd" secondAttribute="centerY" id="DPt-tc-KJt"/>
+                        <constraint firstItem="mY2-Cp-kdi" firstAttribute="centerX" secondItem="6YS-0U-yRd" secondAttribute="centerX" id="K32-6w-qvz"/>
+                        <constraint firstItem="ZhJ-dw-yQq" firstAttribute="trailing" secondItem="mY2-Cp-kdi" secondAttribute="trailing" id="ckI-Sp-0Qa"/>
+                        <constraint firstItem="mY2-Cp-kdi" firstAttribute="leading" secondItem="ZhJ-dw-yQq" secondAttribute="leading" id="nLP-3C-GO1"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="ZhJ-dw-yQq"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="1082.4000000000001" y="798.76847290640399"/>
         </scene>

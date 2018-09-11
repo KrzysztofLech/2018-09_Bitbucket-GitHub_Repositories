@@ -10,7 +10,8 @@ import UIKit
 
 class ListViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private var noDataView: UIView!
     
     private lazy var repoViewModel: RepoViewModel = {
         return RepoViewModel()
@@ -19,13 +20,21 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: RepoTableViewCell.toString(), bundle: nil), forCellReuseIdentifier: RepoTableViewCell.toString())
+        setupTableView()
         getData()
+    }
+    
+    private func setupTableView() {
+        tableView.backgroundView = noDataView
+        tableView.register(UINib(nibName: RepoTableViewCell.toString(), bundle: nil), forCellReuseIdentifier: RepoTableViewCell.toString())
     }
     
     private func getData() {
         repoViewModel.getData { [unowned self] in
-            self.tableView.reloadData()
+            if self.repoViewModel.repositoriesCount > 0 {
+                self.tableView.backgroundView = nil
+                self.tableView.reloadData()
+            }
         }
     }
 }
