@@ -57,4 +57,20 @@ extension ListViewController: UITableViewDataSource {
 
 extension ListViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "DetailsVC", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if
+            let vc = segue.destination as? DetailsViewController,
+            let index = sender as? Int {
+            
+            let detailsData = repoViewModel.getDetailsData(withIndex: index)
+            vc.avatarURL = detailsData.avatarUrl
+            vc.ownerName = detailsData.ownerName
+            vc.repoName  = detailsData.repoName
+            vc.repoDescription = detailsData.description
+        }
+    }
 }

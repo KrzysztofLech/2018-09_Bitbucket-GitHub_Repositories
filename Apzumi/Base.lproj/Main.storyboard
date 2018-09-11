@@ -6,6 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +42,7 @@
                     <navigationItem key="navigationItem" id="fFB-1y-E90"/>
                     <connections>
                         <outlet property="tableView" destination="7Kc-9C-YLK" id="zIn-Uo-EV7"/>
-                        <segue destination="ybi-ue-gE6" kind="show" identifier="DetailVC" id="47o-aa-KYQ"/>
+                        <segue destination="ybi-ue-gE6" kind="show" identifier="DetailsVC" id="47o-aa-KYQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Jr-lX-E8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -53,13 +56,120 @@
                     <view key="view" contentMode="scaleToFill" id="OHL-r2-plF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ot8-XM-3e9">
+                                <rect key="frame" x="56" y="80" width="263" height="263"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ot8-XM-3e9" secondAttribute="height" multiplier="1:1" id="yDx-2c-G9X"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Bki-bE-IXF">
+                                <rect key="frame" x="169" y="193" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoP-y0-lEw">
+                                <rect key="frame" x="166" y="353" width="43" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGp-HH-Rf3" userLabel="Description Container">
+                                <rect key="frame" x="56" y="403" width="263" height="279"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xss-1D-mbK">
+                                        <rect key="frame" x="10" y="10" width="243" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBT-9Y-sLv" userLabel="Line">
+                                        <rect key="frame" x="16" y="37" width="231" height="1"/>
+                                        <color key="backgroundColor" red="0.099353325869999995" green="0.0" blue="0.81692073170000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="HV1-aa-eKM"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E0-dh-kmW">
+                                        <rect key="frame" x="10" y="42" width="243" height="227"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="NBT-9Y-sLv" firstAttribute="leading" secondItem="aGp-HH-Rf3" secondAttribute="leading" constant="16" id="11p-9B-WVy"/>
+                                    <constraint firstItem="NBT-9Y-sLv" firstAttribute="top" secondItem="xss-1D-mbK" secondAttribute="bottom" constant="5" id="22L-xs-bQ0"/>
+                                    <constraint firstItem="7E0-dh-kmW" firstAttribute="leading" secondItem="aGp-HH-Rf3" secondAttribute="leading" constant="10" id="Gkb-Tu-ah8"/>
+                                    <constraint firstAttribute="trailing" secondItem="xss-1D-mbK" secondAttribute="trailing" constant="10" id="J3f-D8-Pa2"/>
+                                    <constraint firstItem="xss-1D-mbK" firstAttribute="leading" secondItem="aGp-HH-Rf3" secondAttribute="leading" constant="10" id="P4R-WA-nC6"/>
+                                    <constraint firstAttribute="trailing" secondItem="NBT-9Y-sLv" secondAttribute="trailing" constant="16" id="SFu-f7-U3i"/>
+                                    <constraint firstAttribute="trailing" secondItem="7E0-dh-kmW" secondAttribute="trailing" constant="10" id="ZqA-sR-nBu"/>
+                                    <constraint firstItem="xss-1D-mbK" firstAttribute="top" secondItem="aGp-HH-Rf3" secondAttribute="top" constant="10" id="a9H-n0-mZ5"/>
+                                    <constraint firstItem="7E0-dh-kmW" firstAttribute="top" secondItem="NBT-9Y-sLv" secondAttribute="bottom" constant="4" id="jEM-PY-Lmq"/>
+                                    <constraint firstAttribute="bottom" secondItem="7E0-dh-kmW" secondAttribute="bottom" constant="10" id="l3O-ma-6e2"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zf-dY-VTe">
+                                <rect key="frame" x="127.66666666666669" y="702" width="120" height="50"/>
+                                <color key="backgroundColor" name="Bitbucket"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="21r-ml-HVX"/>
+                                    <constraint firstAttribute="height" constant="50" id="yj0-DE-dqO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Back to List">
+                                    <color key="titleColor" name="GitHub"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backButtonAction" destination="ybi-ue-gE6" eventType="touchUpInside" id="n1G-Fr-5pG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.099353325869999995" green="0.0" blue="0.81692073170000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="AoP-y0-lEw" firstAttribute="centerX" secondItem="ot8-XM-3e9" secondAttribute="centerX" id="03P-pu-kSJ"/>
+                            <constraint firstItem="Bki-bE-IXF" firstAttribute="centerY" secondItem="ot8-XM-3e9" secondAttribute="centerY" id="9f8-r7-Wib"/>
+                            <constraint firstAttribute="bottom" secondItem="8zf-dY-VTe" secondAttribute="bottom" constant="60" id="I65-8t-eFx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ot8-XM-3e9" secondAttribute="trailing" constant="40" id="QTJ-C4-Ni7"/>
+                            <constraint firstItem="aGp-HH-Rf3" firstAttribute="top" secondItem="ot8-XM-3e9" secondAttribute="bottom" constant="60" id="Wap-fu-wTR"/>
+                            <constraint firstItem="8zf-dY-VTe" firstAttribute="centerX" secondItem="OHL-r2-plF" secondAttribute="centerX" id="YDb-mk-Hxc"/>
+                            <constraint firstItem="aGp-HH-Rf3" firstAttribute="width" secondItem="ot8-XM-3e9" secondAttribute="width" id="YdC-bi-WYU"/>
+                            <constraint firstItem="aGp-HH-Rf3" firstAttribute="centerX" secondItem="OHL-r2-plF" secondAttribute="centerX" id="dUz-AY-wFo"/>
+                            <constraint firstItem="8zf-dY-VTe" firstAttribute="top" secondItem="aGp-HH-Rf3" secondAttribute="bottom" constant="20" id="fJJ-Ec-wOe"/>
+                            <constraint firstItem="AoP-y0-lEw" firstAttribute="top" secondItem="ot8-XM-3e9" secondAttribute="bottom" constant="10" id="feW-mK-9CB"/>
+                            <constraint firstItem="Bki-bE-IXF" firstAttribute="centerX" secondItem="ot8-XM-3e9" secondAttribute="centerX" id="n9W-5v-KQp"/>
+                            <constraint firstItem="ot8-XM-3e9" firstAttribute="leading" secondItem="OHL-r2-plF" secondAttribute="leadingMargin" constant="40" id="oiA-xO-2pT"/>
+                            <constraint firstItem="ot8-XM-3e9" firstAttribute="top" secondItem="OHL-r2-plF" secondAttribute="top" constant="80" id="sUb-WR-HRW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nBD-77-abB"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Bki-bE-IXF" id="Ei2-Wj-IPB"/>
+                        <outlet property="avatarImageView" destination="ot8-XM-3e9" id="IEX-J2-jdm"/>
+                        <outlet property="ownerNameLabel" destination="AoP-y0-lEw" id="pCt-pA-1qC"/>
+                        <outlet property="repoDescriptionTextView" destination="7E0-dh-kmW" id="Fgj-1v-Hs6"/>
+                        <outlet property="repoNameLabel" destination="xss-1D-mbK" id="crx-yY-d5l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxt-wY-A8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1820" y="798.76847290640399"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Bitbucket">
+            <color red="0.29019607843137257" green="0.6588235294117647" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GitHub">
+            <color red="0.0" green="0.15686274509803921" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

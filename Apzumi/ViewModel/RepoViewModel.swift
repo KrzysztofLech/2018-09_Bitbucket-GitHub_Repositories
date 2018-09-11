@@ -20,7 +20,7 @@ class RepoViewModel {
     
     private let dataService: DataService
     
-    var repositories: [Repository] = {
+    private var repositories: [Repository] = {
         
         let bitbucketElements = 10
         let githubElements = 100
@@ -67,8 +67,6 @@ class RepoViewModel {
         }
     }
     
-
-    
     func getCellData(withIndex index: Int) -> (repoName: String, ownerName: String, avatarUrl: String, source: RepoSource) {
         let repoName  = repositories[index].repoName
         let ownerName = repositories[index].ownerName
@@ -76,6 +74,12 @@ class RepoViewModel {
         let source    = repositories[index].repoSource
         return (repoName, ownerName, avatarUrl, source)
     }
-    
-    
+
+    func getDetailsData(withIndex index: Int) -> (repoName: String, ownerName: String, avatarUrl: String, description: String) {
+        let repoName    = repositories[index].repoName
+        let ownerName   = repositories[index].ownerName
+        let avatarUrl   = repositories[index].ownerAvatarUrl
+        let description = repositories[index].repoDescription
+        return (repoName, ownerName, avatarUrl, description)
+    }
 }
