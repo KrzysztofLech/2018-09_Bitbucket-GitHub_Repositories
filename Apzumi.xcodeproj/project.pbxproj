@@ -19,6 +19,7 @@
 		6BFCC3FE2147AFC500B11FD0 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC3FD2147AFC500B11FD0 /* APIService.swift */; };
 		6BFCC4012147BD1F00B11FD0 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC3FF2147BD1F00B11FD0 /* RepoTableViewCell.swift */; };
 		6BFCC4022147BD1F00B11FD0 /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BFCC4002147BD1F00B11FD0 /* RepoTableViewCell.xib */; };
+		6BFCC4062147C47700B11FD0 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC4052147C47700B11FD0 /* UIView+extensions.swift */; };
 		E3873467E918E4F4B6D53C80 /* Pods_Apzumi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F88852B840FCE38532FC5D /* Pods_Apzumi.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		6BFCC3FD2147AFC500B11FD0 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		6BFCC3FF2147BD1F00B11FD0 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 		6BFCC4002147BD1F00B11FD0 /* RepoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
+		6BFCC4052147C47700B11FD0 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		D58CB075B0DC419A4A2E47B9 /* Pods-Apzumi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apzumi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Apzumi/Pods-Apzumi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 		6BFCC3F12147A47300B11FD0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6BFCC4052147C47700B11FD0 /* UIView+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				6BFCC4012147BD1F00B11FD0 /* RepoTableViewCell.swift in Sources */,
 				6BFCC3F42147A8DB00B11FD0 /* InitialViewController.swift in Sources */,
 				6BFCC3F62147A8FD00B11FD0 /* ListViewController.swift in Sources */,
+				6BFCC4062147C47700B11FD0 /* UIView+extensions.swift in Sources */,
 				6BFCC3F82147A98400B11FD0 /* DetailsViewController.swift in Sources */,
 				6BFCC3FC2147AE2500B11FD0 /* GithubRepository.swift in Sources */,
 			);
