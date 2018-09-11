@@ -5,5 +5,6 @@ target 'Apzumi' do
 
    pod 'ReachabilitySwift'
    pod 'Alamofire'
+   pod 'RealmSwift'
 
 end

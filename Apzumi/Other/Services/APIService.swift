@@ -82,7 +82,7 @@ struct APIService {
                                                  repoDescription: repoDescription,
                                                        ownerName: ownerName,
                                                   ownerAvatarUrl: ownerAvatarUrl,
-                                                      repoSource: .bitbucket)
+                                                      repoSource: "Bitbucket")
                             repositories.append(repository)
                         }
 

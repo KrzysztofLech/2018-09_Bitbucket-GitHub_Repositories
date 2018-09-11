@@ -21,7 +21,6 @@
 		6BFCC4062147C47700B11FD0 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC4052147C47700B11FD0 /* UIView+extensions.swift */; };
 		6BFCC4082147C7C200B11FD0 /* RepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC4072147C7C200B11FD0 /* RepoViewModel.swift */; };
 		6BFCC40A2147D45900B11FD0 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC4092147D45900B11FD0 /* Repository.swift */; };
-		6BFCC40C2147D4E400B11FD0 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC40B2147D4E400B11FD0 /* Enums.swift */; };
 		6BFCC40E2147D60100B11FD0 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC40D2147D60100B11FD0 /* DataService.swift */; };
 		6BFCC4102147E52200B11FD0 /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BFCC40F2147E52200B11FD0 /* Colours.xcassets */; };
 		6BFCC4122147E9BB00B11FD0 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC4112147E9BB00B11FD0 /* CacheManager.swift */; };
@@ -48,7 +47,6 @@
 		6BFCC4052147C47700B11FD0 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		6BFCC4072147C7C200B11FD0 /* RepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewModel.swift; sourceTree = "<group>"; };
 		6BFCC4092147D45900B11FD0 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		6BFCC40B2147D4E400B11FD0 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		6BFCC40D2147D60100B11FD0 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		6BFCC40F2147E52200B11FD0 /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
 		6BFCC4112147E9BB00B11FD0 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 		6BFCC3F02147A46600B11FD0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				6BFCC40B2147D4E400B11FD0 /* Enums.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -274,11 +271,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Apzumi/Pods-Apzumi-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -323,7 +324,6 @@
 				6BFCC40A2147D45900B11FD0 /* Repository.swift in Sources */,
 				6BFCC3F82147A98400B11FD0 /* DetailsViewController.swift in Sources */,
 				6BFCC3FC2147AE2500B11FD0 /* GithubRepository.swift in Sources */,
-				6BFCC40C2147D4E400B11FD0 /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

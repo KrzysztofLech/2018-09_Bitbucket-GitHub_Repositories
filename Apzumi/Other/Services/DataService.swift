@@ -32,7 +32,7 @@ class DataService {
                                      repoDescription: item.repoDescription ?? "no description",
                                            ownerName: item.owner.name,
                                       ownerAvatarUrl: item.owner.avatar,
-                                          repoSource: .github)
+                                          repoSource: "GitHub")
                 githubData.append(repository)
             }
             completion(githubData)

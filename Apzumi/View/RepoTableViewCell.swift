@@ -37,18 +37,13 @@ class RepoTableViewCell: UITableViewCell {
         dataSourceLabel.text  = ""
     }
     
-    func update(repoName: String, ownerName: String, avatarUrl: String, source: RepoSource) {
+    func update(repoName: String, ownerName: String, avatarUrl: String, source: String) {
         self.avatarURL = avatarUrl
         
         repoNameLabel.text = repoName
         ownerNameLabel.text = ownerName
         
-        if source == .bitbucket {
-            dataSourceLabel.text = "Bitbucket"
-            dataSourceLabel.textColor = UIColor(named: "Bitbucket")
-        } else {
-            dataSourceLabel.text = "GitHub"
-            dataSourceLabel.textColor = UIColor(named: "GitHub")
-        }
+        dataSourceLabel.text = source
+        dataSourceLabel.textColor = UIColor(named: source)
     }
 }

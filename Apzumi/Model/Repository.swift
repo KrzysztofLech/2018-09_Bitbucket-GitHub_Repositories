@@ -7,14 +7,27 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Repository {
+class Repository: Object {
     
-    let repoName:        String
-    let repoDescription: String
+    @objc dynamic var repoName:        String = ""
+    @objc dynamic var repoDescription: String = ""
     
-    let ownerName:       String
-    let ownerAvatarUrl:  String
+    @objc dynamic var ownerName:       String = ""
+    @objc dynamic var ownerAvatarUrl:  String = ""
     
-    let repoSource:      RepoSource
+    @objc dynamic var repoSource:      String = ""
+    
+    convenience init(repoName: String, repoDescription: String, ownerName: String, ownerAvatarUrl: String, repoSource: String) {
+        self.init()
+        
+        self.repoName = repoName
+        self.repoDescription = repoDescription
+        
+        self.ownerName = ownerName
+        self.ownerAvatarUrl = ownerAvatarUrl
+        
+        self.repoSource = repoSource
+    }
 }

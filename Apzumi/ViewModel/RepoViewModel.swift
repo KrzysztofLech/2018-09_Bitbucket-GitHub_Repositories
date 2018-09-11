@@ -7,29 +7,22 @@
 //
 
 import Foundation
+import RealmSwift
 
 typealias Completion = (()->())
 
-class RepoViewModel {
+class RepoViewModel: NSObject {
     
     var repositoriesCount: Int {
         return repositories.count
     }
     
+    
     // MARK: - Private properties
     
     private let dataService: DataService
-    
-    private var repositories: [Repository] = {
-        
-        let bitbucketElements = 10
-        let githubElements = 100
-        
-        var array: [Repository] = []
-        array.reserveCapacity(bitbucketElements + githubElements)
-        
-        return array
-    }()
+    private let realm = try! Realm()
+    private var repositories: Results<Repository> = try! Realm().objects(Repository.self)
 
     
     // MARK: - Init
@@ -39,35 +32,52 @@ class RepoViewModel {
     }
     
     
+    // MARK: Private methods
+    
+    private func deleteAllData() {
+        try! realm.write {
+            realm.deleteAll()
+            print("Realm: ALL Data Deleted!")
+        }
+    }
+    
     // MARK: Public methods
     
     func getData(completion: @escaping Completion) {
-        repositories.removeAll(keepingCapacity: true)
+        deleteAllData()
         
         // GitHub data fetching
         dataService.fetchGitHubData { [unowned self] (dataArray) in
-            self.repositories.append(contentsOf: dataArray)
-            
-            print("Dodano \(dataArray.count) elementów z GitHub")
-            
+
             DispatchQueue.main.async {
+
+                try! self.realm.write {
+                    self.realm.add(dataArray)
+                }
+
+                print("Dodano \(dataArray.count) elementów z GitHub")
+
                 completion()
             }
         }
         
         // Bitbucket data fetching
         dataService.fetchBitbucketData { [unowned self] (dataArray) in
-            self.repositories.append(contentsOf: dataArray)
-
-            print("Dodano \(dataArray.count) elementów z Bitbucket")
 
             DispatchQueue.main.async {
+                
+                try! self.realm.write {
+                    self.realm.add(dataArray)
+                }
+                
+                print("Dodano \(dataArray.count) elementów z Bitbucket")
+                
                 completion()
             }
         }
     }
     
-    func getCellData(withIndex index: Int) -> (repoName: String, ownerName: String, avatarUrl: String, source: RepoSource) {
+    func getCellData(withIndex index: Int) -> (repoName: String, ownerName: String, avatarUrl: String, source: String) {
         let repoName  = repositories[index].repoName
         let ownerName = repositories[index].ownerName
         let avatarUrl = repositories[index].ownerAvatarUrl
