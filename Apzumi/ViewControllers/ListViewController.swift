@@ -17,6 +17,10 @@ class ListViewController: UIViewController {
         return RepoViewModel()
     }()
     
+    override func prefersHomeIndicatorAutoHidden() -> Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
