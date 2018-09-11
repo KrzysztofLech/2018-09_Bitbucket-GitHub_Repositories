@@ -29,7 +29,7 @@ class DataService {
             var githubData: [Repository] = []
             for item in dataArray {
                 let repository = Repository(repoName: item.repoName,
-                                     repoDescription: item.repoDescription ?? "-",
+                                     repoDescription: item.repoDescription ?? "no description",
                                            ownerName: item.owner.name,
                                       ownerAvatarUrl: item.owner.avatar,
                                           repoSource: .github)

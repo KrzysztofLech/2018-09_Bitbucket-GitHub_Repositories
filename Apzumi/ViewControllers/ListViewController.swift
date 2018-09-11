@@ -12,7 +12,7 @@ class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    lazy var repoViewModel: RepoViewModel = {
+    private lazy var repoViewModel: RepoViewModel = {
         return RepoViewModel()
     }()
     
@@ -28,9 +28,6 @@ class ListViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
-    
-    
-    
 }
 
 extension ListViewController: UITableViewDataSource {
@@ -43,7 +40,11 @@ extension ListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.toString(), for: indexPath) as? RepoTableViewCell else { return UITableViewCell() }
         
         let cellData = repoViewModel.getCellData(withIndex: indexPath.row)
-        cell.update(repoName: cellData.repoName, ownerName: cellData.ownerName, avatarUrl: cellData.avatarUrl, source: cellData.source)
+        cell.update(repoName: cellData.repoName,
+                   ownerName: cellData.ownerName,
+                   avatarUrl: cellData.avatarUrl,
+                      source: cellData.source)
+        
         ImageManager.getImage(withUrl: cellData.avatarUrl) { image in
             if cell.avatarURL == cellData.avatarUrl {
                 cell.activityIndicator.stopAnimating()
