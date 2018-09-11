@@ -44,6 +44,13 @@ extension ListViewController: UITableViewDataSource {
         
         let cellData = repoViewModel.getCellData(withIndex: indexPath.row)
         cell.update(repoName: cellData.repoName, ownerName: cellData.ownerName, avatarUrl: cellData.avatarUrl, source: cellData.source)
+        ImageManager.getImage(withUrl: cellData.avatarUrl) { image in
+            if cell.avatarURL == cellData.avatarUrl {
+                cell.activityIndicator.stopAnimating()
+                cell.avatarImageView.image = image
+            }
+        }
+
         return cell
     }
 }

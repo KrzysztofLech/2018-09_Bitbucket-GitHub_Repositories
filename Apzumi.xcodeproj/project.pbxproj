@@ -24,6 +24,8 @@
 		6BFCC40C2147D4E400B11FD0 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC40B2147D4E400B11FD0 /* Enums.swift */; };
 		6BFCC40E2147D60100B11FD0 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC40D2147D60100B11FD0 /* DataService.swift */; };
 		6BFCC4102147E52200B11FD0 /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BFCC40F2147E52200B11FD0 /* Colours.xcassets */; };
+		6BFCC4122147E9BB00B11FD0 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC4112147E9BB00B11FD0 /* CacheManager.swift */; };
+		6BFCC4142147E9F200B11FD0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFCC4132147E9F200B11FD0 /* ImageManager.swift */; };
 		E3873467E918E4F4B6D53C80 /* Pods_Apzumi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F88852B840FCE38532FC5D /* Pods_Apzumi.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		6BFCC40B2147D4E400B11FD0 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		6BFCC40D2147D60100B11FD0 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		6BFCC40F2147E52200B11FD0 /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
+		6BFCC4112147E9BB00B11FD0 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		6BFCC4132147E9F200B11FD0 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		D58CB075B0DC419A4A2E47B9 /* Pods-Apzumi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apzumi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Apzumi/Pods-Apzumi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +171,8 @@
 			children = (
 				6BFCC40D2147D60100B11FD0 /* DataService.swift */,
 				6BFCC3FD2147AFC500B11FD0 /* APIService.swift */,
+				6BFCC4112147E9BB00B11FD0 /* CacheManager.swift */,
+				6BFCC4132147E9F200B11FD0 /* ImageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFCC4122147E9BB00B11FD0 /* CacheManager.swift in Sources */,
 				6BFCC4082147C7C200B11FD0 /* RepoViewModel.swift in Sources */,
 				6B5C7F6821477BFB00386D2C /* AppDelegate.swift in Sources */,
 				6BFCC3FE2147AFC500B11FD0 /* APIService.swift in Sources */,
@@ -312,6 +319,7 @@
 				6BFCC4012147BD1F00B11FD0 /* RepoTableViewCell.swift in Sources */,
 				6BFCC3F62147A8FD00B11FD0 /* ListViewController.swift in Sources */,
 				6BFCC4062147C47700B11FD0 /* UIView+extensions.swift in Sources */,
+				6BFCC4142147E9F200B11FD0 /* ImageManager.swift in Sources */,
 				6BFCC40A2147D45900B11FD0 /* Repository.swift in Sources */,
 				6BFCC3F82147A98400B11FD0 /* DetailsViewController.swift in Sources */,
 				6BFCC3FC2147AE2500B11FD0 /* GithubRepository.swift in Sources */,
