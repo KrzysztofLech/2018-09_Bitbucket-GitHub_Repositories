@@ -53,7 +53,6 @@ class RepoViewModel: NSObject {
     private func deleteAllData() {
         try! realm.write {
             realm.deleteAll()
-            print("Realm: ALL Data Deleted!")
         }
     }
     

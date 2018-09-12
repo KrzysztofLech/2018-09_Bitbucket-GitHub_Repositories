@@ -14,6 +14,7 @@ struct APIService {
     private let githubUrl    = "https://api.github.com/repositories"
     private let bitbucketUrl = "https://api.bitbucket.org/2.0/repositories?fields=values.name,values.owner,values.description"
     
+    
     func getGitHubData(closure: @escaping (_ data: [GithubRepository]) -> ()) {
         guard let endPointUrl = URL(string: githubUrl) else {
             print("Error: Cannot create URL")

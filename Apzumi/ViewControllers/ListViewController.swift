@@ -10,6 +10,8 @@ import UIKit
 
 class ListViewController: UIViewController {
     
+    // MARK: - Properties
+    
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private var noDataView: UIView!
     @IBOutlet private weak var bitbucketCounterLabel: UILabel!
@@ -20,6 +22,8 @@ class ListViewController: UIViewController {
     }()
     private var dataShouldBeFetched = true
     
+    
+    // MARK: - Init methods
     
     override func prefersHomeIndicatorAutoHidden() -> Bool {
         return true
@@ -35,6 +39,9 @@ class ListViewController: UIViewController {
         super.viewDidAppear(animated)
         if dataShouldBeFetched { getData() }
     }
+    
+    
+    // MARK: - Other methods
     
     private func setupNoDataTablePlaceholder() {
         tableView.backgroundView = (repoViewModel.repositoriesCount > 0) ? nil : noDataView
@@ -68,6 +75,7 @@ class ListViewController: UIViewController {
                         })
         }
     }
+    
     @IBAction func sortButtonAction(_ sender: UIButton) {
         repoViewModel.dataShouldBeSorted = !sender.isSelected
         sender.isSelected = !sender.isSelected
@@ -75,6 +83,7 @@ class ListViewController: UIViewController {
     }
 }
 
+// MARK: - Table Data Source methods
 
 extension ListViewController: UITableViewDataSource {
     
@@ -111,6 +120,7 @@ extension ListViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Table Delegate methods
 
 extension ListViewController: UITableViewDelegate {
     

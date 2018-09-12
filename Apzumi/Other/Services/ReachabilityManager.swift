@@ -16,6 +16,7 @@ class ReachabilityManager: NSObject {
     var reachability = Reachability()!
     private var firstNotifycation = true
     
+    
     func isReachable() -> Bool {
         return reachability.connection != .none
     }

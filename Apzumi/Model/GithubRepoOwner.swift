@@ -9,6 +9,7 @@
 import Foundation
 
 struct GithubRepoOwner: Codable {
+    
     let name:   String
     let avatar: String
     

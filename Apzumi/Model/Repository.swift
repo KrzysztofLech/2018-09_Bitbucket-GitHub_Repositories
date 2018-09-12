@@ -19,6 +19,7 @@ class Repository: Object {
     
     @objc dynamic var repoSource:      String = ""
     
+    
     convenience init(repoName: String, repoDescription: String, ownerName: String, ownerAvatarUrl: String, repoSource: String) {
         self.init()
         
