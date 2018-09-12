@@ -13,9 +13,13 @@ typealias Completion = (()->())
 
 class RepoViewModel: NSObject {
     
+    // MARK: - Public properties
+    
     var repositoriesCount: Int {
         return repositories.count
     }
+    
+    var dataShouldBeSorted: Bool = false
     
     
     // MARK: - Private properties
@@ -23,16 +27,17 @@ class RepoViewModel: NSObject {
     private let dataService: DataService
     private let realm = try! Realm()
     private var repositories: Results<Repository> = try! Realm().objects(Repository.self)
+    private var sortedRepositories: Results<Repository>?
 
     
-    // MARK: - Init
+    // MARK: - Init method
     
     init(dataService: DataService = DataService()) {
         self.dataService = dataService
     }
     
     
-    // MARK: Private methods
+    // MARK: - Private methods
     
     private func deleteAllData() {
         try! realm.write {
@@ -41,7 +46,12 @@ class RepoViewModel: NSObject {
         }
     }
     
-    // MARK: Public methods
+    private func prepareSortedData() {
+        sortedRepositories = repositories.sorted(byKeyPath: "repoName", ascending: true)
+    }
+    
+    
+    // MARK: - Public methods
     
     func getData(completion: @escaping Completion) {
         deleteAllData()
@@ -56,7 +66,8 @@ class RepoViewModel: NSObject {
                 }
 
                 print("Dodano \(dataArray.count) elementów z GitHub")
-
+                
+                self.prepareSortedData()
                 completion()
             }
         }
@@ -70,6 +81,7 @@ class RepoViewModel: NSObject {
                     self.realm.add(dataArray)
                 }
                 
+                self.prepareSortedData()
                 print("Dodano \(dataArray.count) elementów z Bitbucket")
                 
                 completion()
@@ -78,18 +90,12 @@ class RepoViewModel: NSObject {
     }
     
     func getCellData(withIndex index: Int) -> (repoName: String, ownerName: String, avatarUrl: String, source: String) {
-        let repoName  = repositories[index].repoName
-        let ownerName = repositories[index].ownerName
-        let avatarUrl = repositories[index].ownerAvatarUrl
-        let source    = repositories[index].repoSource
-        return (repoName, ownerName, avatarUrl, source)
+        let data = dataShouldBeSorted ? sortedRepositories![index] : repositories[index]
+        return (data.repoName, data.ownerName, data.ownerAvatarUrl, data.repoSource)
     }
 
     func getDetailsData(withIndex index: Int) -> (repoName: String, ownerName: String, avatarUrl: String, description: String) {
-        let repoName    = repositories[index].repoName
-        let ownerName   = repositories[index].ownerName
-        let avatarUrl   = repositories[index].ownerAvatarUrl
-        let description = repositories[index].repoDescription
-        return (repoName, ownerName, avatarUrl, description)
+        let data = dataShouldBeSorted ? sortedRepositories![index] : repositories[index]
+        return (data.repoName, data.ownerName, data.ownerAvatarUrl, data.repoDescription)
     }
 }

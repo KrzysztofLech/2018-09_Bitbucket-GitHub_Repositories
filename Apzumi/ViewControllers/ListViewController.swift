@@ -41,6 +41,11 @@ class ListViewController: UIViewController {
             }
         }
     }
+    @IBAction func sortButtonAction(_ sender: UIButton) {
+        repoViewModel.dataShouldBeSorted = !sender.isSelected
+        sender.isSelected = !sender.isSelected
+        tableView.reloadData()
+    }
 }
 
 extension ListViewController: UITableViewDataSource {
