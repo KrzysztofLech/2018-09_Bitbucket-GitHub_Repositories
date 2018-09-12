@@ -21,6 +21,7 @@ class ListViewController: UIViewController {
         return RepoViewModel()
     }()
     private var dataShouldBeFetched = true
+    private let transitionController = TransitionController()
     
     
     // MARK: - Init methods
@@ -138,6 +139,8 @@ extension ListViewController: UITableViewDelegate {
             vc.ownerName = detailsData.ownerName
             vc.repoName  = detailsData.repoName
             vc.repoDescription = detailsData.description
+            
+            vc.transitioningDelegate = transitionController
         }
     }
 }
