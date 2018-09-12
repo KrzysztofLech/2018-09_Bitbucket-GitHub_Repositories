@@ -12,6 +12,8 @@ class ListViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private var noDataView: UIView!
+    @IBOutlet private weak var bitbucketCounterLabel: UILabel!
+    @IBOutlet private weak var githubCounterLabel: UILabel!
     
     private lazy var repoViewModel: RepoViewModel = {
         return RepoViewModel()
@@ -37,6 +39,8 @@ class ListViewController: UIViewController {
         repoViewModel.getData { [unowned self] in
             if self.repoViewModel.repositoriesCount > 0 {
                 self.tableView.backgroundView = nil
+                self.bitbucketCounterLabel.text = self.repoViewModel.bitbucketCounter
+                self.githubCounterLabel.text = self.repoViewModel.githubCounter
                 self.tableView.reloadData()
             }
         }

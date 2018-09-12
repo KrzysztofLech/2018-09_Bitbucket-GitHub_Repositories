@@ -46,12 +46,44 @@
                                             <action selector="sortButtonAction:" destination="6s4-LT-gFu" eventType="touchUpInside" id="rVu-7K-aqE"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitbucket:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qc-CJ-6tX">
+                                        <rect key="frame" x="135.33333333333334" y="10" width="64.666666666666657" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwh-jo-lBB">
+                                        <rect key="frame" x="151.33333333333334" y="33" width="48.666666666666657" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzb-ew-WTh">
+                                        <rect key="frame" x="205" y="10" width="9.6666666666666572" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgr-mY-Ca6">
+                                        <rect key="frame" x="205" y="33" width="9.6666666666666572" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Gzb-ew-WTh" firstAttribute="leading" secondItem="3qc-CJ-6tX" secondAttribute="trailing" constant="5" id="0Bd-XI-vEQ"/>
+                                    <constraint firstItem="3qc-CJ-6tX" firstAttribute="centerX" secondItem="8te-gH-zk6" secondAttribute="centerX" constant="-20" id="8ck-af-MwC"/>
+                                    <constraint firstItem="Lgr-mY-Ca6" firstAttribute="centerY" secondItem="Wwh-jo-lBB" secondAttribute="centerY" id="AiZ-eg-cOf"/>
+                                    <constraint firstItem="3qc-CJ-6tX" firstAttribute="top" secondItem="8te-gH-zk6" secondAttribute="top" constant="10" id="PRi-d8-dNd"/>
                                     <constraint firstAttribute="height" constant="60" id="PsZ-CF-9Js"/>
+                                    <constraint firstItem="Wwh-jo-lBB" firstAttribute="trailing" secondItem="3qc-CJ-6tX" secondAttribute="trailing" id="WR7-ii-MoO"/>
+                                    <constraint firstItem="Gzb-ew-WTh" firstAttribute="centerY" secondItem="3qc-CJ-6tX" secondAttribute="centerY" id="XD0-Rz-hpz"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wwh-jo-lBB" secondAttribute="bottom" constant="10" id="jg0-XJ-3vC"/>
                                     <constraint firstAttribute="trailing" secondItem="a8y-WV-nrs" secondAttribute="trailing" constant="10" id="oWD-iU-FrZ"/>
                                     <constraint firstItem="a8y-WV-nrs" firstAttribute="centerY" secondItem="8te-gH-zk6" secondAttribute="centerY" id="raa-Zn-Zrc"/>
+                                    <constraint firstItem="Lgr-mY-Ca6" firstAttribute="leading" secondItem="Wwh-jo-lBB" secondAttribute="trailing" constant="5" id="tDf-tS-qrw"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Kc-9C-YLK">
@@ -77,6 +109,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="fFB-1y-E90"/>
                     <connections>
+                        <outlet property="bitbucketCounterLabel" destination="Gzb-ew-WTh" id="YO7-i0-eyg"/>
+                        <outlet property="githubCounterLabel" destination="Lgr-mY-Ca6" id="fsS-z6-tMW"/>
                         <outlet property="noDataView" destination="6YS-0U-yRd" id="mEh-HA-HtC"/>
                         <outlet property="tableView" destination="7Kc-9C-YLK" id="zIn-Uo-EV7"/>
                         <segue destination="ybi-ue-gE6" kind="show" identifier="DetailsVC" id="47o-aa-KYQ"/>

@@ -21,6 +21,14 @@ class RepoViewModel: NSObject {
     
     var dataShouldBeSorted: Bool = false
     
+    var bitbucketCounter: String {
+        return String(bitbucketCounterInt)
+    }
+    
+    var githubCounter: String {
+        return String(githubCounterInt)
+    }
+    
     
     // MARK: - Private properties
     
@@ -28,6 +36,9 @@ class RepoViewModel: NSObject {
     private let realm = try! Realm()
     private var repositories: Results<Repository> = try! Realm().objects(Repository.self)
     private var sortedRepositories: Results<Repository>?
+    
+    private var bitbucketCounterInt: Int = 0
+    private var githubCounterInt:    Int = 0
 
     
     // MARK: - Init method
@@ -64,10 +75,10 @@ class RepoViewModel: NSObject {
                 try! self.realm.write {
                     self.realm.add(dataArray)
                 }
-
-                print("Dodano \(dataArray.count) elementów z GitHub")
                 
                 self.prepareSortedData()
+                self.githubCounterInt = dataArray.count
+                
                 completion()
             }
         }
@@ -82,7 +93,7 @@ class RepoViewModel: NSObject {
                 }
                 
                 self.prepareSortedData()
-                print("Dodano \(dataArray.count) elementów z Bitbucket")
+                self.bitbucketCounterInt = dataArray.count
                 
                 completion()
             }
@@ -98,4 +109,5 @@ class RepoViewModel: NSObject {
         let data = dataShouldBeSorted ? sortedRepositories![index] : repositories[index]
         return (data.repoName, data.ownerName, data.ownerAvatarUrl, data.repoDescription)
     }
+    
 }
