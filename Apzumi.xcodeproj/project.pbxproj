@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B53074A2148FAB60084BE1D /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5307492148FAB60084BE1D /* Alerts.swift */; };
+		6B53074C2148FAEA0084BE1D /* UIApplication+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53074B2148FAEA0084BE1D /* UIApplication+extensions.swift */; };
+		6B53074F2148FB380084BE1D /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53074E2148FB380084BE1D /* ReachabilityManager.swift */; };
 		6B5C7F6821477BFB00386D2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C7F6721477BFB00386D2C /* AppDelegate.swift */; };
 		6B5C7F6D21477BFB00386D2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C7F6B21477BFB00386D2C /* Main.storyboard */; };
 		6B5C7F6F21477BFC00386D2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C7F6E21477BFC00386D2C /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 /* Begin PBXFileReference section */
 		1A7656395C21E2F35AFE7D01 /* Pods-Apzumi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apzumi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Apzumi/Pods-Apzumi.release.xcconfig"; sourceTree = "<group>"; };
 		28F88852B840FCE38532FC5D /* Pods_Apzumi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apzumi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B5307492148FAB60084BE1D /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		6B53074B2148FAEA0084BE1D /* UIApplication+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extensions.swift"; sourceTree = "<group>"; };
+		6B53074E2148FB380084BE1D /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		6B5C7F6421477BFB00386D2C /* Apzumi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apzumi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5C7F6721477BFB00386D2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B5C7F6C21477BFB00386D2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 		6BFCC3F02147A46600B11FD0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6B5307492148FAB60084BE1D /* Alerts.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -159,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				6BFCC4052147C47700B11FD0 /* UIView+extensions.swift */,
+				6B53074B2148FAEA0084BE1D /* UIApplication+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 				6BFCC3FD2147AFC500B11FD0 /* APIService.swift */,
 				6BFCC4112147E9BB00B11FD0 /* CacheManager.swift */,
 				6BFCC4132147E9F200B11FD0 /* ImageManager.swift */,
+				6B53074E2148FB380084BE1D /* ReachabilityManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -311,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B53074F2148FB380084BE1D /* ReachabilityManager.swift in Sources */,
 				6BFCC4122147E9BB00B11FD0 /* CacheManager.swift in Sources */,
 				6BFCC4082147C7C200B11FD0 /* RepoViewModel.swift in Sources */,
 				6B5C7F6821477BFB00386D2C /* AppDelegate.swift in Sources */,
@@ -321,8 +331,10 @@
 				6BFCC3F62147A8FD00B11FD0 /* ListViewController.swift in Sources */,
 				6BFCC4062147C47700B11FD0 /* UIView+extensions.swift in Sources */,
 				6BFCC4142147E9F200B11FD0 /* ImageManager.swift in Sources */,
+				6B53074C2148FAEA0084BE1D /* UIApplication+extensions.swift in Sources */,
 				6BFCC40A2147D45900B11FD0 /* Repository.swift in Sources */,
 				6BFCC3F82147A98400B11FD0 /* DetailsViewController.swift in Sources */,
+				6B53074A2148FAB60084BE1D /* Alerts.swift in Sources */,
 				6BFCC3FC2147AE2500B11FD0 /* GithubRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

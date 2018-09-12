@@ -19,7 +19,7 @@ struct ImageManager {
     }
     
     static func downloadImage(withUrl urlString: String, closure: @escaping (_ image: UIImage) -> ()) {
-        guard let url = URL(string: urlString) else { return }
+        guard ReachabilityManager.shared.isReachable(), let url = URL(string: urlString) else { return }
         
         let session = URLSession.shared
         let downloadTask = session.downloadTask(with: url) { (url, response, error) in

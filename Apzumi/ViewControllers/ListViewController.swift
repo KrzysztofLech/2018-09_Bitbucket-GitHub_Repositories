@@ -18,6 +18,8 @@ class ListViewController: UIViewController {
     private lazy var repoViewModel: RepoViewModel = {
         return RepoViewModel()
     }()
+    private var dataShouldBeFetched = true
+    
     
     override func prefersHomeIndicatorAutoHidden() -> Bool {
         return true
@@ -25,24 +27,45 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupTableView()
-        getData()
+        tableView.register(UINib(nibName: RepoTableViewCell.toString(), bundle: nil), forCellReuseIdentifier: RepoTableViewCell.toString())
+        setupNoDataTablePlaceholder()
     }
     
-    private func setupTableView() {
-        tableView.backgroundView = noDataView
-        tableView.register(UINib(nibName: RepoTableViewCell.toString(), bundle: nil), forCellReuseIdentifier: RepoTableViewCell.toString())
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if dataShouldBeFetched { getData() }
+    }
+    
+    private func setupNoDataTablePlaceholder() {
+        tableView.backgroundView = (repoViewModel.repositoriesCount > 0) ? nil : noDataView
     }
     
     private func getData() {
-        repoViewModel.getData { [unowned self] in
-            if self.repoViewModel.repositoriesCount > 0 {
-                self.tableView.backgroundView = nil
-                self.bitbucketCounterLabel.text = self.repoViewModel.bitbucketCounter
-                self.githubCounterLabel.text = self.repoViewModel.githubCounter
-                self.tableView.reloadData()
+        dataShouldBeFetched = false
+        if ReachabilityManager.shared.isReachable() {
+            
+            repoViewModel.getData { [unowned self] in
+                if self.repoViewModel.repositoriesCount > 0 {
+                    self.tableView.backgroundView = nil
+                    self.bitbucketCounterLabel.text = self.repoViewModel.bitbucketCounter
+                    self.githubCounterLabel.text = self.repoViewModel.githubCounter
+                    self.setupNoDataTablePlaceholder()
+                    self.tableView.reloadData()
+                }
             }
+            
+        } else {
+            
+            alertWithTwoButtons(title: "Internet is no available!",
+                              message: "What do you want to do?",
+                      leftButtonTitle: "Try again",
+                     rightButtonTitle: "Use cached data",
+                     leftButtonCompletion: { (_) in
+                        self.getData()
+                        },
+                     rightButtonCompletion: { (_) in
+                        print("Use cached data!")
+                        })
         }
     }
     @IBAction func sortButtonAction(_ sender: UIButton) {
@@ -51,6 +74,7 @@ class ListViewController: UIViewController {
         tableView.reloadData()
     }
 }
+
 
 extension ListViewController: UITableViewDataSource {
     
@@ -77,6 +101,7 @@ extension ListViewController: UITableViewDataSource {
         return cell
     }
 }
+
 
 extension ListViewController: UITableViewDelegate {
     
