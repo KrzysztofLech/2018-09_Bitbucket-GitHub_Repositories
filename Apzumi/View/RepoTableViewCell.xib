@@ -89,6 +89,7 @@
             <connections>
                 <outlet property="activityIndicator" destination="edQ-gy-SfJ" id="Dvt-Gk-rJc"/>
                 <outlet property="avatarImageView" destination="8yv-kD-raF" id="e01-Y8-KnY"/>
+                <outlet property="containerView" destination="F7d-8s-aYR" id="SDN-xB-LWf"/>
                 <outlet property="dataSourceLabel" destination="pSX-Sl-RbB" id="fL2-UT-yMa"/>
                 <outlet property="ownerNameLabel" destination="1al-JT-cqu" id="GWV-Pd-1aY"/>
                 <outlet property="repoNameLabel" destination="qmo-Tf-yaH" id="MC8-lv-Nub"/>

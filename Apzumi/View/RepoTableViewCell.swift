@@ -10,22 +10,29 @@ import UIKit
 
 class RepoTableViewCell: UITableViewCell {
 
+    @IBOutlet private weak var containerView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var avatarImageView:   UIImageView!
-    @IBOutlet weak var repoNameLabel:     UILabel!
-    @IBOutlet weak var ownerNameLabel:    UILabel!
-    @IBOutlet weak var dataSourceLabel:   UILabel!
+    @IBOutlet private weak var repoNameLabel:     UILabel!
+    @IBOutlet private weak var ownerNameLabel:    UILabel!
+    @IBOutlet private weak var dataSourceLabel:   UILabel!
     
     var avatarURL: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureCellAppearance()
         resetCell()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         resetCell()
+    }
+    
+    private func configureCellAppearance() {
+        containerView.layer.cornerRadius = 8
+        containerView.layer.masksToBounds = true
     }
     
     private func resetCell() {
